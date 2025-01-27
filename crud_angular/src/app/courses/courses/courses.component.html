@@ -61,3 +61,8 @@
 
     </mat-card-content>
 </mat-card>
+<app-data-binding></app-data-binding>
+
+<app-ciclo-vida [valorInicial]="valor" *ngIf="!deletarCiclo"></app-ciclo-vida>
+<button (click)="mudarValor()">Mudar Valor</button>
+<button (click)="destruirCiclo()">Destruir</button>

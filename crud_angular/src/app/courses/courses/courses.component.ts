@@ -15,6 +15,16 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class CoursesComponent {
     courses$: Observable<Course[]>;
     displayedColumns = ['_id', 'name', 'category', 'actions']
+    valor: number = 5;
+    deletarCiclo: boolean = false;
+
+    mudarValor() {
+      this.valor++;
+    }
+
+    destruirCiclo() {
+      this.deletarCiclo = true;
+    }
 
     constructor(
       private coursesService: CoursesService,
@@ -33,10 +43,15 @@ export class CoursesComponent {
     }
 
     onError(errorMessage: string) {
-      this.dialog.open(ErrorDialogComponent, {
-        data: errorMessage
-      });
+     console.log(errorMessage);
+
     }
+
+    // onError(errorMessage: string) {
+    //   this.dialog.open(ErrorDialogComponent, {
+    //     data: errorMessage
+    //   });
+    // }
 
     onAdd() {
       this.router.navigate(['new'], {relativeTo: this.route});

@@ -6,10 +6,12 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 
 import { HttpClientModule } from '@angular/common/http'
-import { MatToolbarModule } from '@angular/material/toolbar'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { OutputPropertyComponent } from './output-property/output-property.component';
+import { CicloVidaComponent } from './ciclo-vida/ciclo-vida.component';
 
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent,],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -19,5 +21,6 @@ import { MatToolbarModule } from '@angular/material/toolbar'
     ],
     providers: [],
     bootstrap: [AppComponent],
+    exports: []
 })
 export class AppModule {}
