@@ -1,0 +1,37 @@
+<nav class="navbar navbar-dark bg-primary">
+    <div class="nav navbar-nav">
+        <a
+            class="nav-item nav-link"
+            [class.active]="aba === 'home'"
+            (click)="aba = 'home'"
+            (keydown.enter)="aba = 'home'"
+            (keydown.space)="aba = 'home'"
+            tabindex="0"
+            >Home
+        </a>
+        <a
+            class="nav-item nav-link"
+            [class.active]="aba === 'mapa'"
+            (click)="aba = 'mapa'"
+            (keydown.enter)="aba = 'mapa'"
+            (keydown.space)="aba = 'mapa'"
+            tabindex="0"
+            >Mapa
+        </a>
+        <a
+            class="nav-item nav-link"
+            [class.active]="aba === 'lista'"
+            (click)="aba = 'lista'"
+            (keydown.enter)="aba = 'lista'"
+            (keydown.space)="aba = 'lista'"
+            tabindex="0"
+            >Lista
+        </a>
+    </div>
+</nav>
+
+<div class="container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'mapa'">Mapa ativado</p>
+  <p *ngSwitchCase="'lista'">Lista ativado</p>
+  <p *ngSwitchDefault>Home ativado</p>
+</div>
